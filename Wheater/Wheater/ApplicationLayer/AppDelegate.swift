@@ -15,7 +15,7 @@ internal var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = WheaterViewController()
+        window?.rootViewController = WheaterViewController(viewModel: WheaterViewModel())
         return true
     }
 

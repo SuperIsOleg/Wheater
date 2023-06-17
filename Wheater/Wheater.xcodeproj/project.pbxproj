@@ -11,6 +11,8 @@
 		0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B4112A3E0C2500096A65 /* WheaterViewController.swift */; };
 		0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4162A3E0C2600096A65 /* Assets.xcassets */; };
 		0225B41A2A3E0C2600096A65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */; };
+		02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */; };
+		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		0CE0EF29E02F602616E67173 /* Pods_Wheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +23,8 @@
 		0225B4162A3E0C2600096A65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0225B4192A3E0C2600096A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0225B41B2A3E0C2600096A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewModel.swift; sourceTree = "<group>"; };
+		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		3E0D1A96FEF9B40C8435E02D /* Pods-Wheater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.release.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.release.xcconfig"; sourceTree = "<group>"; };
 		4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wheater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801C6964EEF2D312A57B566C /* Pods-Wheater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.debug.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,9 +91,27 @@
 		02C472692A3E0DC300043ACF /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0225B4112A3E0C2500096A65 /* WheaterViewController.swift */,
+				02C4726A2A3E0F6F00043ACF /* WheaterModul */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		02C4726A2A3E0F6F00043ACF /* WheaterModul */ = {
+			isa = PBXGroup;
+			children = (
+				02C4726B2A3E0F7E00043ACF /* Views */,
+				0225B4112A3E0C2500096A65 /* WheaterViewController.swift */,
+				02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */,
+			);
+			path = WheaterModul;
+			sourceTree = "<group>";
+		};
+		02C4726B2A3E0F7E00043ACF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02C4726F2A3E108000043ACF /* WheaterView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6157DF7760A9F6F8EC89A300 /* Pods */ = {
@@ -224,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
+				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,
 				0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */,
+				02C472702A3E108000043ACF /* WheaterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
