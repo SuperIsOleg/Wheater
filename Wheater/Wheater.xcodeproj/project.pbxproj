@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B40D2A3E0C2500096A65 /* AppDelegate.swift */; };
-		0225B4102A3E0C2500096A65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B40F2A3E0C2500096A65 /* SceneDelegate.swift */; };
-		0225B4122A3E0C2500096A65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B4112A3E0C2500096A65 /* ViewController.swift */; };
-		0225B4152A3E0C2500096A65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4132A3E0C2500096A65 /* Main.storyboard */; };
+		0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B4112A3E0C2500096A65 /* WheaterViewController.swift */; };
 		0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4162A3E0C2600096A65 /* Assets.xcassets */; };
 		0225B41A2A3E0C2600096A65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */; };
 		0CE0EF29E02F602616E67173 /* Pods_Wheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */; };
@@ -19,9 +17,7 @@
 /* Begin PBXFileReference section */
 		0225B40A2A3E0C2500096A65 /* Wheater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wheater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0225B40D2A3E0C2500096A65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0225B40F2A3E0C2500096A65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0225B4112A3E0C2500096A65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0225B4142A3E0C2500096A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0225B4112A3E0C2500096A65 /* WheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewController.swift; sourceTree = "<group>"; };
 		0225B4162A3E0C2600096A65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0225B4192A3E0C2600096A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0225B41B2A3E0C2600096A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,15 +59,37 @@
 		0225B40C2A3E0C2500096A65 /* Wheater */ = {
 			isa = PBXGroup;
 			children = (
+				02C472672A3E0DA800043ACF /* ApplicationLayer */,
+				02C472682A3E0DB800043ACF /* BusinessLayer */,
+				02C472692A3E0DC300043ACF /* PresentationLayer */,
+			);
+			path = Wheater;
+			sourceTree = "<group>";
+		};
+		02C472672A3E0DA800043ACF /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
 				0225B40D2A3E0C2500096A65 /* AppDelegate.swift */,
-				0225B40F2A3E0C2500096A65 /* SceneDelegate.swift */,
-				0225B4112A3E0C2500096A65 /* ViewController.swift */,
-				0225B4132A3E0C2500096A65 /* Main.storyboard */,
 				0225B4162A3E0C2600096A65 /* Assets.xcassets */,
 				0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */,
 				0225B41B2A3E0C2600096A65 /* Info.plist */,
 			);
-			path = Wheater;
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		02C472682A3E0DB800043ACF /* BusinessLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLayer;
+			sourceTree = "<group>";
+		};
+		02C472692A3E0DC300043ACF /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0225B4112A3E0C2500096A65 /* WheaterViewController.swift */,
+			);
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 		6157DF7760A9F6F8EC89A300 /* Pods */ = {
@@ -80,7 +98,6 @@
 				801C6964EEF2D312A57B566C /* Pods-Wheater.debug.xcconfig */,
 				3E0D1A96FEF9B40C8435E02D /* Pods-Wheater.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,7 +171,6 @@
 			files = (
 				0225B41A2A3E0C2600096A65 /* LaunchScreen.storyboard in Resources */,
 				0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */,
-				0225B4152A3E0C2500096A65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,23 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0225B4122A3E0C2500096A65 /* ViewController.swift in Sources */,
+				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */,
-				0225B4102A3E0C2500096A65 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0225B4132A3E0C2500096A65 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0225B4142A3E0C2500096A65 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -339,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -359,12 +366,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U84988C6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Wheater/Info.plist;
+				INFOPLIST_FILE = Wheater/ApplicationLayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,12 +396,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U84988C6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Wheater/Info.plist;
+				INFOPLIST_FILE = Wheater/ApplicationLayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
