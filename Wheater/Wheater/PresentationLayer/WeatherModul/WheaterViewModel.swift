@@ -7,6 +7,6 @@
 
 import Foundation
 
-class WheaterViewModel {
+final class WheaterViewModel {
     
 }

@@ -1,14 +1,13 @@
 //
-//  WheaterView.swift
+//  HeaderTableView.swift
 //  Wheater
 //
 //  Created by Oleg Kalistratov on 17.06.23.
 //
 
 import UIKit
-import SnapKit
 
-class WheaterView: UIView {
+final class HeaderTableView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +19,7 @@ class WheaterView: UIView {
     }
     
     private func setupLayout() {
-        self.backgroundColor = .red
+        self.backgroundColor = .brown
     }
+    
 }
