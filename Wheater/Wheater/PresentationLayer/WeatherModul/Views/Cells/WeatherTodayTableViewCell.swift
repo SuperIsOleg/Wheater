@@ -14,7 +14,7 @@ final class WeatherTodayTableViewCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .blue
         view.alpha = 0.5
-        view.layer.cornerRadius = 6
+        view.layer.cornerRadius = 12
         return view
     }()
     
@@ -42,7 +42,7 @@ final class WeatherTodayTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         self.contentView.backgroundColor = UIColor.clear
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = .clear
         
         self.contentView.addSubview(containerView)
         containerView.snp.makeConstraints({
@@ -62,7 +62,7 @@ final class WeatherTodayTableViewCell: UITableViewCell {
             $0.top.equalTo(informationLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-10)
-            $0.height.equalTo(100)
+            $0.height.equalTo(80)
         })
     }
 }

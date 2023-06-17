@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Wheater
+
+  Created by Oleg Kalistratov on 17.06.23.
+  
+*/
+
+// MARK: Weather
+weather.currentWeather = "H:%d L:%d";

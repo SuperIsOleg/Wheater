@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02052C1C2A3E447A001F85EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02052C1E2A3E447A001F85EE /* Localizable.strings */; };
+		02052C212A3E48CC001F85EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02052C202A3E48CC001F85EE /* R.generated.swift */; };
+		02052C232A3E48DF001F85EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02052C222A3E48DF001F85EE /* R.generated.swift */; };
+		02052C252A3E511F001F85EE /* BackgroundVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 02052C242A3E511F001F85EE /* BackgroundVideo.mp4 */; };
 		0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B40D2A3E0C2500096A65 /* AppDelegate.swift */; };
 		0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B4112A3E0C2500096A65 /* WheaterViewController.swift */; };
 		0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4162A3E0C2600096A65 /* Assets.xcassets */; };
@@ -15,11 +19,14 @@
 		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472712A3E184200043ACF /* HeaderTableView.swift */; };
 		02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */; };
-		02C472792A3E259600043ACF /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472782A3E259600043ACF /* WeatherTableView.swift */; };
 		0CE0EF29E02F602616E67173 /* Pods_Wheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02052C1D2A3E447A001F85EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02052C202A3E48CC001F85EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Wheater/ApplicationLayer/Resources/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		02052C222A3E48DF001F85EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		02052C242A3E511F001F85EE /* BackgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BackgroundVideo.mp4; path = ../../../../../../../Downloads/BackgroundVideo.mp4; sourceTree = "<group>"; };
 		0225B40A2A3E0C2500096A65 /* Wheater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wheater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0225B40D2A3E0C2500096A65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0225B4112A3E0C2500096A65 /* WheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +37,6 @@
 		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		02C472712A3E184200043ACF /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayTableViewCell.swift; sourceTree = "<group>"; };
-		02C472782A3E259600043ACF /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		3E0D1A96FEF9B40C8435E02D /* Pods-Wheater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.release.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.release.xcconfig"; sourceTree = "<group>"; };
 		4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wheater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801C6964EEF2D312A57B566C /* Pods-Wheater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.debug.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.debug.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +54,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02052C172A3E43C0001F85EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02052C192A3E442B001F85EE /* Localization */,
+				0225B4162A3E0C2600096A65 /* Assets.xcassets */,
+				02052C242A3E511F001F85EE /* BackgroundVideo.mp4 */,
+				0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */,
+				0225B41B2A3E0C2600096A65 /* Info.plist */,
+				02052C222A3E48DF001F85EE /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		02052C182A3E43C6001F85EE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0225B40D2A3E0C2500096A65 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		02052C192A3E442B001F85EE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				02052C202A3E48CC001F85EE /* R.generated.swift */,
+				02052C1E2A3E447A001F85EE /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		0225B4012A3E0C2500096A65 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +115,8 @@
 		02C472672A3E0DA800043ACF /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0225B40D2A3E0C2500096A65 /* AppDelegate.swift */,
-				0225B4162A3E0C2600096A65 /* Assets.xcassets */,
-				0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */,
-				0225B41B2A3E0C2600096A65 /* Info.plist */,
+				02052C182A3E43C6001F85EE /* Application */,
+				02052C172A3E43C0001F85EE /* Resources */,
 			);
 			path = ApplicationLayer;
 			sourceTree = "<group>";
@@ -118,7 +152,6 @@
 				02C472732A3E18EC00043ACF /* Cells */,
 				02C4726F2A3E108000043ACF /* WheaterView.swift */,
 				02C472712A3E184200043ACF /* HeaderTableView.swift */,
-				02C472782A3E259600043ACF /* WeatherTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +189,7 @@
 			buildConfigurationList = 0225B41E2A3E0C2600096A65 /* Build configuration list for PBXNativeTarget "Wheater" */;
 			buildPhases = (
 				B69D7ED939B51BE336B8AB71 /* [CP] Check Pods Manifest.lock */,
+				02052C1F2A3E45EC001F85EE /* R.Swift */,
 				0225B4062A3E0C2500096A65 /* Sources */,
 				0225B4072A3E0C2500096A65 /* Frameworks */,
 				0225B4082A3E0C2500096A65 /* Resources */,
@@ -208,7 +242,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02052C252A3E511F001F85EE /* BackgroundVideo.mp4 in Resources */,
 				0225B41A2A3E0C2600096A65 /* LaunchScreen.storyboard in Resources */,
+				02052C1C2A3E447A001F85EE /* Localizable.strings in Resources */,
 				0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +252,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02052C1F2A3E45EC001F85EE /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Wheater/ApplicationLayer/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Wheater/ApplicationLayer/Resources/R.generated.swift\"\n";
+		};
 		3DCAD92E3774E6D36612805F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,10 +320,11 @@
 			files = (
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
+				02052C232A3E48DF001F85EE /* R.generated.swift in Sources */,
 				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,
+				02052C212A3E48CC001F85EE /* R.generated.swift in Sources */,
 				02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */,
 				0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */,
-				02C472792A3E259600043ACF /* WeatherTableView.swift in Sources */,
 				02C472702A3E108000043ACF /* WheaterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +332,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		02052C1E2A3E447A001F85EE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02052C1D2A3E447A001F85EE /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -410,7 +475,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U84988C6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Wheater/ApplicationLayer/Info.plist;
+				INFOPLIST_FILE = Wheater/ApplicationLayer/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -440,7 +505,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U84988C6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Wheater/ApplicationLayer/Info.plist;
+				INFOPLIST_FILE = Wheater/ApplicationLayer/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

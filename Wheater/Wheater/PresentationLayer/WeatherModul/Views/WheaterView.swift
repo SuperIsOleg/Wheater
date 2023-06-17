@@ -10,14 +10,16 @@ import SnapKit
 
 final class WheaterView: UIView {
     
-    private let _tableView: WeatherTableView = {
-       let tableView = WeatherTableView()
-        tableView.backgroundColor = .red
+    private let _tableView: UITableView = {
+       let tableView = UITableView()
+        tableView.register(WeatherTodayTableViewCell.self, forCellReuseIdentifier: WeatherTodayTableViewCell.reuseIdentifier)
         tableView.sectionHeaderTopPadding = 0
+        tableView.layer.zPosition = 3
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
-    internal var tableView: WeatherTableView {
+    internal var tableView: UITableView {
         get {
             return _tableView
         }
@@ -33,7 +35,6 @@ final class WheaterView: UIView {
     }
     
     private func setupLayout() {
-        self.backgroundColor = .white
         
         self.addSubview(_tableView)
         _tableView.snp.makeConstraints({

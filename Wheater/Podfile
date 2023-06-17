@@ -6,7 +6,7 @@ target 'Wheater' do
   use_frameworks!
 
   # Pods for Wheater
-  pod 'R.swift', '~> 6.1.0'
+  pod 'R.swift', '~> 7.0.0'
   pod 'SnapKit', '~> 5.6.0'
 
 end

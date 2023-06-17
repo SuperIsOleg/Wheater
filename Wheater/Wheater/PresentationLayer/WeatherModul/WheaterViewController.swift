@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class WheaterViewController: UIViewController {
     private lazy var wheaterView = WheaterView()
@@ -21,7 +22,12 @@ final class WheaterViewController: UIViewController {
         self.wheaterView.tableView.delegate = self
         self.wheaterView.tableView.dataSource = self
         
-        self.wheaterView.tableView.sectionHeaderHeight = 300.0
+        self.wheaterView.tableView.sectionHeaderHeight = 350.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupBackgroundVideo()
     }
 
     init(viewModel: WheaterViewModel) {
@@ -31,6 +37,19 @@ final class WheaterViewController: UIViewController {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupBackgroundVideo() {
+        guard let path = Bundle.main.path(forResource: "BackgroundVideo", ofType: "mp4") else { return }
+        try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.zPosition = 0
+        player.isMuted = true
+        playerLayer.frame = self.wheaterView.bounds
+        self.wheaterView.layer.addSublayer(playerLayer)
+        player.play()
     }
     
 }
