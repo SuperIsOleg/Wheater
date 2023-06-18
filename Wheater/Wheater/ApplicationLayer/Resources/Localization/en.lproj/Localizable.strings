@@ -8,3 +8,4 @@
 
 // MARK: Weather
 weather.feels = "Feels like %d°";
+weather.now = "Now";

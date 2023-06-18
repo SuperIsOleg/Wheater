@@ -28,6 +28,9 @@
 		02BD25882A3F83FD00DCCC06 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25872A3F83FD00DCCC06 /* UIViewController+Extensions.swift */; };
 		02BD258A2A3F8AD400DCCC06 /* SnakeCaseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25892A3F8AD400DCCC06 /* SnakeCaseDecoder.swift */; };
 		02BD258C2A3FA05C00DCCC06 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD258B2A3FA05C00DCCC06 /* Array+Extensions.swift */; };
+		02BD258E2A3FA43300DCCC06 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD258D2A3FA43300DCCC06 /* Date+Extensions.swift */; };
+		02BD25902A3FB35300DCCC06 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD258F2A3FB35300DCCC06 /* String+Extensions.swift */; };
+		02BD25932A3FB7DC00DCCC06 /* TimeComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25922A3FB7DC00DCCC06 /* TimeComponets.swift */; };
 		02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */; };
 		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472712A3E184200043ACF /* HeaderTableView.swift */; };
@@ -59,6 +62,9 @@
 		02BD25872A3F83FD00DCCC06 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		02BD25892A3F8AD400DCCC06 /* SnakeCaseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeCaseDecoder.swift; sourceTree = "<group>"; };
 		02BD258B2A3FA05C00DCCC06 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		02BD258D2A3FA43300DCCC06 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		02BD258F2A3FB35300DCCC06 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		02BD25922A3FB7DC00DCCC06 /* TimeComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeComponets.swift; sourceTree = "<group>"; };
 		02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewModel.swift; sourceTree = "<group>"; };
 		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		02C472712A3E184200043ACF /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
@@ -196,8 +202,8 @@
 		02BD257D2A3EFFC400DCCC06 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */,
 				02BD25822A3F274800DCCC06 /* WeatherModel.swift */,
+				02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,13 +213,24 @@
 			children = (
 				02BD25872A3F83FD00DCCC06 /* UIViewController+Extensions.swift */,
 				02BD258B2A3FA05C00DCCC06 /* Array+Extensions.swift */,
+				02BD258D2A3FA43300DCCC06 /* Date+Extensions.swift */,
+				02BD258F2A3FB35300DCCC06 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		02BD25912A3FB7C300DCCC06 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				02BD25922A3FB7DC00DCCC06 /* TimeComponets.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		02C472672A3E0DA800043ACF /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				02BD25912A3FB7C300DCCC06 /* Enums */,
 				02BD25862A3F83D700DCCC06 /* Extensions */,
 				02052C182A3E43C6001F85EE /* Application */,
 				02052C172A3E43C0001F85EE /* Resources */,
@@ -424,8 +441,10 @@
 			files = (
 				02BD257F2A3EFFD800DCCC06 /* ErrorModel.swift in Sources */,
 				02BD257C2A3EFB3200DCCC06 /* RequestError.swift in Sources */,
+				02BD258E2A3FA43300DCCC06 /* Date+Extensions.swift in Sources */,
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
+				02BD25932A3FB7DC00DCCC06 /* TimeComponets.swift in Sources */,
 				02BD25882A3F83FD00DCCC06 /* UIViewController+Extensions.swift in Sources */,
 				02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */,
 				02BD258A2A3F8AD400DCCC06 /* SnakeCaseDecoder.swift in Sources */,
@@ -433,6 +452,7 @@
 				02BD25762A3EFAED00DCCC06 /* ApiProtocol.swift in Sources */,
 				02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */,
 				02052C232A3E48DF001F85EE /* R.generated.swift in Sources */,
+				02BD25902A3FB35300DCCC06 /* String+Extensions.swift in Sources */,
 				02BD258C2A3FA05C00DCCC06 /* Array+Extensions.swift in Sources */,
 				02052C2C2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift in Sources */,
 				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,

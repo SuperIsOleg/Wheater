@@ -76,7 +76,7 @@ final class HeaderTableView: UIView {
     }
     
     internal func configure(model: WeatherModel) {
-        self.temperatureLabel.text = String(format: "%g", model.current.temp) + "°"
+        self.temperatureLabel.text = String(format: "%g", model.current.temp.rounded(.up)) + "°"
         self.currentState.text = model.current.weather.first?.main
         self.feelsLike.text = R.string.localizable.weatherFeels(Int(model.current.feelsLike))
     }

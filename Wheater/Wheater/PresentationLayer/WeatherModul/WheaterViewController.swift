@@ -79,11 +79,21 @@ extension WheaterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTodayTableViewCell.reuseIdentifier,
-                                                       for: indexPath) as? WeatherTodayTableViewCell else { return UITableViewCell() }
-        cell.weatherTodayCollectionView.delegate = self
-        cell.weatherTodayCollectionView.dataSource = self
-        return cell
+        
+        switch indexPath.row {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTodayTableViewCell.reuseIdentifier,
+                                                           for: indexPath) as? WeatherTodayTableViewCell,
+                  let weatherModel = self.viewModel.weatherModel else { return UITableViewCell() }
+            cell.weatherTodayCollectionView.delegate = self
+            cell.weatherTodayCollectionView.dataSource = self
+            cell.configure(model: weatherModel)
+            return cell
+        default:
+            break
+        }
+        
+        return UITableViewCell()
     }
     
 }
@@ -103,7 +113,12 @@ extension WheaterViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentWeatherCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? CurrentWeatherCollectionViewCell else { return UICollectionViewCell() }
+                                                            for: indexPath) as? CurrentWeatherCollectionViewCell,
+              let weatherModel = self.viewModel.weatherModel,
+              let horlyModel = weatherModel.hourly[safe: indexPath.row],
+              let weather = horlyModel.weather.first else { return UICollectionViewCell() }
+        cell.configure(model: horlyModel)
+
         return cell
     }
 }

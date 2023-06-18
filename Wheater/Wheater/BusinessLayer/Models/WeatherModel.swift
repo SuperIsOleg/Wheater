@@ -9,19 +9,25 @@ import Foundation
 
 struct WeatherModel: Codable {
     let timezone: String
-    let timezoneOffset: Int
     let current: CurrentWeather
     let hourly: [Hourly]
     let daily: [Daily]
-
     
+    var currentTime: String = ""
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.timezone = try container.decode(String.self, forKey: .timezone)
-        self.timezoneOffset = try container.decode(Int.self, forKey: .timezoneOffset)
         self.current = try container.decode(CurrentWeather.self, forKey: .current)
         self.hourly = try container.decode([Hourly].self, forKey: .hourly)
         self.daily = try container.decode([Daily].self, forKey: .daily)
+        
+        self.currentTime = convertToDate(identifier: timezone, format: "dd-MM-yyyy'T'HH:mm:ss")
+    }
+    
+    private func convertToDate(identifier: String, format: String) -> String {
+        let dateString = Date.convertToTime(format: format, identifier: identifier)
+        return dateString ?? ""
     }
 }
 
@@ -36,6 +42,10 @@ struct CurrentWeather: Codable {
     let windSpeed: Double
     let weather: [Weather]
     
+    var currentDate: String = ""
+    var sunriseTime: String = ""
+    var sunsetTime: String = ""
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dt = try container.decode(Int.self, forKey: .dt)
@@ -47,6 +57,16 @@ struct CurrentWeather: Codable {
         self.visibility = try container.decode(Int.self, forKey: .visibility)
         self.windSpeed = try container.decode(Double.self, forKey: .windSpeed)
         self.weather = try container.decode([Weather].self, forKey: .weather)
+        
+        self.currentDate = convertToDate(timeInterval: dt, format: "dd-MM-yyyy'T'HH:mm:ss")
+        self.sunriseTime = convertToDate(timeInterval: sunrise, format: "dd-MM-yyyy'T'HH:mm:ss")
+        self.sunsetTime = convertToDate(timeInterval: sunset, format: "dd-MM-yyyy'T'HH:mm:ss")
+    }
+    
+    private func convertToDate(timeInterval: Int, format: String) -> String {
+        let date = Date(timeIntervalSince1970: Double(timeInterval))
+        let dateString = date.convertToDate(format: format)
+        return dateString ?? ""
     }
 }
 
@@ -74,6 +94,8 @@ struct Hourly: Codable {
     let windSpeed: Double
     let weather: [Weather]
     
+    var hourlyWeather: String = ""
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dt = try container.decode(Int.self, forKey: .dt)
@@ -83,6 +105,15 @@ struct Hourly: Codable {
         self.visibility = try container.decode(Int.self, forKey: .visibility)
         self.windSpeed = try container.decode(Double.self, forKey: .windSpeed)
         self.weather = try container.decode([Weather].self, forKey: .weather)
+        
+        self.hourlyWeather = convertToDate(timeInterval: dt, format: "dd-MM-yyyy'T'HH:mm:ss")
+
+    }
+    
+    private func convertToDate(timeInterval: Int, format: String) -> String {
+        let date = Date(timeIntervalSince1970: Double(timeInterval))
+        let dateString = date.convertToDate(format: format)
+        return dateString ?? ""
     }
 }
 
@@ -96,6 +127,10 @@ struct Daily: Codable {
     let windSpeed: Double
     let weather: [Weather]
     
+    var weatherByDate: String = ""
+    var sunriseTime: String = ""
+    var sunsetTime: String = ""
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.dt = try container.decode(Int.self, forKey: .dt)
@@ -106,6 +141,16 @@ struct Daily: Codable {
         self.humidity = try container.decode(Int.self, forKey: .humidity)
         self.windSpeed = try container.decode(Double.self, forKey: .windSpeed)
         self.weather = try container.decode([Weather].self, forKey: .weather)
+        
+        self.weatherByDate = convertToDate(timeInterval: dt, format: "dd-MM-yyyy'T'HH:mm:ss")
+        self.sunriseTime = convertToDate(timeInterval: sunrise, format: "dd-MM-yyyy'T'HH:mm:ss")
+        self.sunsetTime = convertToDate(timeInterval: sunset, format: "dd-MM-yyyy'T'HH:mm:ss")
+    }
+    
+    private func convertToDate(timeInterval: Int, format: String) -> String {
+        let date = Date(timeIntervalSince1970: Double(timeInterval))
+        let dateString = date.convertToDate(format: format)
+        return dateString ?? ""
     }
 }
 

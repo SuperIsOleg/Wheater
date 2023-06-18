@@ -16,23 +16,22 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
     }()
     
     private let timeLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = R.font.helveticaNeueThin(size: 15)
-        label.text = "Now"
         label.textColor = .white
         label.textAlignment = .center
         return label
     }()
     
     private let weatherImageView: UIImageView = {
-       let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        let imageView = UIImageView()
         imageView.image = R.image.сloud()
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
     private let degreesLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = R.font.helveticaNeueThin(size: 15)
         label.text = "19°"
         label.textColor = .white
@@ -74,5 +73,13 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
             $0.top.equalTo(weatherImageView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
         })
+    }
+    
+    internal func configure(model: Hourly) {
+        let curentHoure = Date.getCurrentDate(format: "HH")
+        let timeWeather = model.hourlyWeather.convertDate(from: "dd-MM-yyyy'T'HH:mm:ss", to: "HH")
+        self.timeLabel.text = timeWeather == curentHoure ? R.string.localizable.weatherNow() : timeWeather
+        self.degreesLabel.text = String(format: "%g", model.temp.rounded(.up)) + "°"
+        
     }
 }

@@ -21,10 +21,9 @@ final class WeatherTodayTableViewCell: UITableViewCell {
     
     private let informationLabel: UILabel = {
         let label = UILabel()
-        label.text = "jhcjz jdhcjkdshj djkhcjd cjd kdcksjks cjd dcsbcbschdb cskdjkcjsk"
         label.lineBreakMode = .byWordWrapping
         label.font = R.font.helveticaNeueThin(size: 20)
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.textAlignment = .left
         label.textColor = .white
         return label
@@ -81,5 +80,10 @@ final class WeatherTodayTableViewCell: UITableViewCell {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-10)
         })
+    }
+    
+    internal func configure(model: WeatherModel) {
+        guard let currentWeather = model.current.weather.first else { return }
+        self.informationLabel.text = currentWeather.description
     }
 }

@@ -50,7 +50,7 @@ extension HTTPClient {
                         if let error = response.error {
                             completion(.failure(.message(message: "[\(_response.statusCode)]  \(error.localizedDescription)")))
                         } else {
-                            completion(.failure(.message(message: "[\(_response.statusCode)] No error inforation")))
+                            completion(.failure(.message(message: "[\(_response.statusCode)] No error information")))
                         }
                     }
                 } catch {

@@ -10,4 +10,8 @@ import Foundation
 struct NetworkConstants {
     static let baseUrl = "https://api.openweathermap.org"
     static let apiKey = "17b3227a6d8c74d6e7e74a95abb7cf70"
+    
+    static func getUrlForImage(model: Weather) -> String {
+        return "https://openweathermap.org/img/wn/\(model.icon).png"
+    }
 }
