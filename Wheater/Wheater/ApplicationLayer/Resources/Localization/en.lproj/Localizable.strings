@@ -7,4 +7,4 @@
 */
 
 // MARK: Weather
-weather.currentWeather = "H:%d° L:%d°";
+weather.feels = "Feels like %d°";

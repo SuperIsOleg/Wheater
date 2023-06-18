@@ -64,6 +64,8 @@ extension WheaterViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HeaderTableView()
+        guard let weatherModel = self.viewModel.weatherModel else { return header }
+        header.configure(model: weatherModel)
         return header
     }
     

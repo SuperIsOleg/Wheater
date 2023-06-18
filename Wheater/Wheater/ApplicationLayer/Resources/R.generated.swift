@@ -68,12 +68,12 @@ struct _R {
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
-      /// en translation: H:%d° L:%d°
+      /// en translation: Feels like %d°
       ///
-      /// Key: weather.currentWeather
+      /// Key: weather.feels
       ///
       /// Locales: en
-      var weatherCurrentWeather: RswiftResources.StringResource2<Int, Int> { .init(key: "weather.currentWeather", tableName: "Localizable", source: source, developmentValue: "H:%d° L:%d°", comment: nil) }
+      var weatherFeels: RswiftResources.StringResource1<Int> { .init(key: "weather.feels", tableName: "Localizable", source: source, developmentValue: "Feels like %d°", comment: nil) }
     }
   }
 

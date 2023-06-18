@@ -30,7 +30,6 @@ final class HeaderTableView: UIView {
     
     private let temperatureLabel: UILabel = {
        let label = UILabel()
-        label.text = "21°"
         label.font = R.font.helveticaNeueThin(size: 100)
         label.textColor = .white
         label.textAlignment = .center
@@ -39,16 +38,14 @@ final class HeaderTableView: UIView {
     
     private let currentState: UILabel = {
        let label = UILabel()
-        label.text = "Mostly Cloude"
         label.font = UIFont.systemFont(ofSize: 20)
         label.textColor = .white
         label.textAlignment = .center
         return label
     }()
     
-    private let currentWeather: UILabel = {
+    private let feelsLike: UILabel = {
        let label = UILabel()
-        label.text = R.string.localizable.weatherCurrentWeather(29, 15)
         label.font = R.font.helveticaNeueThin(size: 20)
         label.textColor = .white
         label.textAlignment = .center
@@ -74,8 +71,14 @@ final class HeaderTableView: UIView {
         
         stackView.addArrangedSubview(cityLabel)
         stackView.addArrangedSubview(temperatureLabel)
+        stackView.addArrangedSubview(feelsLike)
         stackView.addArrangedSubview(currentState)
-        stackView.addArrangedSubview(currentWeather)
+    }
+    
+    internal func configure(model: WeatherModel) {
+        self.temperatureLabel.text = String(format: "%g", model.current.temp) + "°"
+        self.currentState.text = model.current.weather.first?.main
+        self.feelsLike.text = R.string.localizable.weatherFeels(Int(model.current.feelsLike))
     }
     
 }
