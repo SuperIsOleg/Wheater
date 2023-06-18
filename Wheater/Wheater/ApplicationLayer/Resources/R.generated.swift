@@ -15,6 +15,7 @@ struct _R {
   var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
+  var font: font { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
@@ -33,6 +34,9 @@ struct _R {
   func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
+  func font(bundle: Foundation.Bundle) -> font {
+    .init(bundle: bundle)
+  }
   func file(bundle: Foundation.Bundle) -> file {
     .init(bundle: bundle)
   }
@@ -40,6 +44,7 @@ struct _R {
     .init(bundle: bundle)
   }
   func validate() throws {
+    try self.font.validate()
     try self.storyboard.validate()
   }
 
@@ -63,12 +68,12 @@ struct _R {
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
-      /// en translation: H:%d L:%d
+      /// en translation: H:%d° L:%d°
       ///
       /// Key: weather.currentWeather
       ///
       /// Locales: en
-      var weatherCurrentWeather: RswiftResources.StringResource2<Int, Int> { .init(key: "weather.currentWeather", tableName: "Localizable", source: source, developmentValue: "H:%d L:%d", comment: nil) }
+      var weatherCurrentWeather: RswiftResources.StringResource2<Int, Int> { .init(key: "weather.currentWeather", tableName: "Localizable", source: source, developmentValue: "H:%d° L:%d°", comment: nil) }
     }
   }
 
@@ -84,16 +89,36 @@ struct _R {
   struct image {
     let bundle: Foundation.Bundle
 
-    /// Image `WheaterIcon`.
-    var wheaterIcon: ImageResource { .init(name: "WheaterIcon", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `Сloud`.
+    var сloud: ImageResource { .init(name: "Сloud", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 1 resource files.
+  /// This `_R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Sequence {
+    let bundle: Foundation.Bundle
+
+    /// Font `HelveticaNeue-Thin`.
+    var helveticaNeueThin: RswiftResources.FontResource { .init(name: "HelveticaNeue-Thin", bundle: bundle, filename: "HelveticaNeue-Thin.otf") }
+
+    func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
+      [helveticaNeueThin].makeIterator()
+    }
+    func validate() throws {
+      for font in self {
+        if !font.canBeLoaded() { throw RswiftResources.ValidationError("[R.swift] Font '\(font.name)' could not be loaded, is '\(font.filename)' added to the UIAppFonts array in this targets Info.plist?") }
+      }
+    }
+  }
+
+  /// This `_R.file` struct is generated, and contains static references to 2 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
     /// Resource file `BackgroundVideo.mp4`.
     var backgroundVideoMp4: RswiftResources.FileResource { .init(name: "BackgroundVideo", pathExtension: "mp4", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `HelveticaNeue-Thin.otf`.
+    var helveticaNeueThinOtf: RswiftResources.FileResource { .init(name: "HelveticaNeue-Thin", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 1 storyboards.

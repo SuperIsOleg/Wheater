@@ -10,7 +10,9 @@
 		02052C1C2A3E447A001F85EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02052C1E2A3E447A001F85EE /* Localizable.strings */; };
 		02052C212A3E48CC001F85EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02052C202A3E48CC001F85EE /* R.generated.swift */; };
 		02052C232A3E48DF001F85EE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02052C222A3E48DF001F85EE /* R.generated.swift */; };
-		02052C252A3E511F001F85EE /* BackgroundVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 02052C242A3E511F001F85EE /* BackgroundVideo.mp4 */; };
+		02052C282A3E6541001F85EE /* HelveticaNeue-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 02052C272A3E6540001F85EE /* HelveticaNeue-Thin.otf */; };
+		02052C2A2A3E66BD001F85EE /* BackgroundVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 02052C292A3E66BD001F85EE /* BackgroundVideo.mp4 */; };
+		02052C2C2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02052C2B2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift */; };
 		0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B40D2A3E0C2500096A65 /* AppDelegate.swift */; };
 		0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B4112A3E0C2500096A65 /* WheaterViewController.swift */; };
 		0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4162A3E0C2600096A65 /* Assets.xcassets */; };
@@ -26,7 +28,9 @@
 		02052C1D2A3E447A001F85EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02052C202A3E48CC001F85EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Wheater/ApplicationLayer/Resources/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		02052C222A3E48DF001F85EE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		02052C242A3E511F001F85EE /* BackgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = BackgroundVideo.mp4; path = ../../../../../../../Downloads/BackgroundVideo.mp4; sourceTree = "<group>"; };
+		02052C272A3E6540001F85EE /* HelveticaNeue-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeue-Thin.otf"; sourceTree = "<group>"; };
+		02052C292A3E66BD001F85EE /* BackgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BackgroundVideo.mp4; sourceTree = "<group>"; };
+		02052C2B2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		0225B40A2A3E0C2500096A65 /* Wheater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wheater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0225B40D2A3E0C2500096A65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0225B4112A3E0C2500096A65 /* WheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +61,10 @@
 		02052C172A3E43C0001F85EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02052C262A3E6522001F85EE /* Fonts */,
 				02052C192A3E442B001F85EE /* Localization */,
 				0225B4162A3E0C2600096A65 /* Assets.xcassets */,
-				02052C242A3E511F001F85EE /* BackgroundVideo.mp4 */,
+				02052C292A3E66BD001F85EE /* BackgroundVideo.mp4 */,
 				0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */,
 				0225B41B2A3E0C2600096A65 /* Info.plist */,
 				02052C222A3E48DF001F85EE /* R.generated.swift */,
@@ -82,6 +87,14 @@
 				02052C1E2A3E447A001F85EE /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		02052C262A3E6522001F85EE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				02052C272A3E6540001F85EE /* HelveticaNeue-Thin.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		0225B4012A3E0C2500096A65 = {
@@ -160,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */,
+				02052C2B2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -242,10 +256,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02052C252A3E511F001F85EE /* BackgroundVideo.mp4 in Resources */,
+				02052C2A2A3E66BD001F85EE /* BackgroundVideo.mp4 in Resources */,
 				0225B41A2A3E0C2600096A65 /* LaunchScreen.storyboard in Resources */,
 				02052C1C2A3E447A001F85EE /* Localizable.strings in Resources */,
 				0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */,
+				02052C282A3E6541001F85EE /* HelveticaNeue-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +336,7 @@
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
 				02052C232A3E48DF001F85EE /* R.generated.swift in Sources */,
+				02052C2C2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift in Sources */,
 				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,
 				02052C212A3E48CC001F85EE /* R.generated.swift in Sources */,
 				02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */,

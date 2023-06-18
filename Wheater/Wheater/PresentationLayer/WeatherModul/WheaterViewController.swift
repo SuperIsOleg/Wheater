@@ -11,12 +11,12 @@ import AVFoundation
 final class WheaterViewController: UIViewController {
     private lazy var wheaterView = WheaterView()
     private let viewModel: WheaterViewModel
-
+    
     override func loadView() {
         super.loadView()
         self.view = wheaterView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.wheaterView.tableView.delegate = self
@@ -29,12 +29,12 @@ final class WheaterViewController: UIViewController {
         super.viewDidAppear(animated)
         self.setupBackgroundVideo()
     }
-
+    
     init(viewModel: WheaterViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -65,7 +65,7 @@ extension WheaterViewController: UITableViewDelegate {
         return header
     }
     
-
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -77,10 +77,31 @@ extension WheaterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTodayTableViewCell.reuseIdentifier,
                                                        for: indexPath) as? WeatherTodayTableViewCell else { return UITableViewCell() }
-        
+        cell.weatherTodayCollectionView.delegate = self
+        cell.weatherTodayCollectionView.dataSource = self
         return cell
     }
     
+}
+
+// MARK: - UICollectionViewDelegate
+extension WheaterViewController: UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension WheaterViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 24
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentWeatherCollectionViewCell.reuseIdentifier,
+                                                           for: indexPath) as? CurrentWeatherCollectionViewCell else { return UICollectionViewCell() }
+        return cell
+    }
     
     
 }

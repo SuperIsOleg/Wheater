@@ -10,26 +10,43 @@ import UIKit
 final class WeatherTodayTableViewCell: UITableViewCell {
     static var reuseIdentifier = String(describing: WeatherTodayTableViewCell.self)
     
-    private let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
-        view.alpha = 0.5
-        view.layer.cornerRadius = 12
-        return view
+    private let containerView: UIVisualEffectView = {
+        let visualView = UIVisualEffectView()
+        let bluerEffect = UIBlurEffect(style: .light)
+        visualView.effect = bluerEffect
+        visualView.layer.cornerRadius = 12
+        visualView.clipsToBounds = true
+        return visualView
     }()
     
     private let informationLabel: UILabel = {
         let label = UILabel()
-        label.text = "dsbvjknbdfhjbvdklsnvjkcndsacklfnjknkldsnj shdcjfsuihidhcjuindsklsncjks"
+        label.text = "dsbvjknbdfhjbvdklsnvjkcndsacklfnjknkldsndssfdsfds"
+        label.font = R.font.helveticaNeueThin(size: 20)
         label.numberOfLines = 0
+        label.textAlignment = .left
         label.textColor = .white
         return label
     }()
     
-    private let weatherTodayCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    private let _weatherTodayCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 10
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(CurrentWeatherCollectionViewCell.self,
+                                forCellWithReuseIdentifier: CurrentWeatherCollectionViewCell.reuseIdentifier)
         return collectionView
     }()
+    
+    internal var weatherTodayCollectionView: UICollectionView {
+        get {
+            return _weatherTodayCollectionView
+        }
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,8 +58,9 @@ final class WeatherTodayTableViewCell: UITableViewCell {
     }
     
     private func setupLayout() {
-        self.contentView.backgroundColor = UIColor.clear
+        self.contentView.backgroundColor = .clear
         self.backgroundColor = .clear
+        self.selectionStyle = .none
         
         self.contentView.addSubview(containerView)
         containerView.snp.makeConstraints({
@@ -51,18 +69,18 @@ final class WeatherTodayTableViewCell: UITableViewCell {
             $0.bottom.equalToSuperview()
         })
         
-        self.containerView.addSubview(informationLabel)
+        self.containerView.contentView.addSubview(informationLabel)
         informationLabel.snp.makeConstraints({
             $0.top.equalToSuperview().offset(10)
             $0.leading.trailing.equalToSuperview().inset(10)
         })
-        
-        self.containerView.addSubview(weatherTodayCollectionView)
-        weatherTodayCollectionView.snp.makeConstraints({
+
+        self.containerView.contentView.addSubview(_weatherTodayCollectionView)
+        _weatherTodayCollectionView.snp.makeConstraints({
             $0.top.equalTo(informationLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-10)
-            $0.height.equalTo(80)
+            $0.height.equalTo(110)
         })
     }
 }

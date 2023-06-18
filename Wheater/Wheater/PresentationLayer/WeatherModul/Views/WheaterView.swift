@@ -11,11 +11,12 @@ import SnapKit
 final class WheaterView: UIView {
     
     private let _tableView: UITableView = {
-       let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(WeatherTodayTableViewCell.self, forCellReuseIdentifier: WeatherTodayTableViewCell.reuseIdentifier)
         tableView.sectionHeaderTopPadding = 0
         tableView.layer.zPosition = 3
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         return tableView
     }()
     

@@ -13,21 +13,26 @@ final class HeaderTableView: UIView {
        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.backgroundColor = .none
-        stackView.distribution = .equalCentering
-        stackView.spacing = 15
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 5
         return stackView
     }()
     
     private let cityLabel: UILabel = {
         let label = UILabel()
         label.text = "Minsk"
+        label.font = R.font.helveticaNeueThin(size: 40)
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
     
     private let temperatureLabel: UILabel = {
        let label = UILabel()
-        label.text = "21"
+        label.text = "21°"
+        label.font = R.font.helveticaNeueThin(size: 100)
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -35,6 +40,8 @@ final class HeaderTableView: UIView {
     private let currentState: UILabel = {
        let label = UILabel()
         label.text = "Mostly Cloude"
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -42,6 +49,8 @@ final class HeaderTableView: UIView {
     private let currentWeather: UILabel = {
        let label = UILabel()
         label.text = R.string.localizable.weatherCurrentWeather(29, 15)
+        label.font = R.font.helveticaNeueThin(size: 20)
+        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -64,29 +73,9 @@ final class HeaderTableView: UIView {
         })
         
         stackView.addArrangedSubview(cityLabel)
-        cityLabel.snp.makeConstraints({
-            $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
-        })
-        
         stackView.addArrangedSubview(temperatureLabel)
-        temperatureLabel.snp.makeConstraints({
-            $0.top.equalTo(cityLabel.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-        })
-        
         stackView.addArrangedSubview(currentState)
-        currentState.snp.makeConstraints({
-            $0.top.equalTo(temperatureLabel.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-        })
-        
         stackView.addArrangedSubview(currentWeather)
-        currentWeather.snp.makeConstraints({
-            $0.top.equalTo(currentState.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
-        })
     }
     
 }
