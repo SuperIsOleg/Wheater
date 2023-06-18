@@ -22,6 +22,9 @@
 		02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25792A3EFB2000DCCC06 /* HTTTPClient.swift */; };
 		02BD257C2A3EFB3200DCCC06 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD257B2A3EFB3200DCCC06 /* RequestError.swift */; };
 		02BD257F2A3EFFD800DCCC06 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */; };
+		02BD25812A3F26ED00DCCC06 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25802A3F26ED00DCCC06 /* WeatherService.swift */; };
+		02BD25832A3F274800DCCC06 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25822A3F274800DCCC06 /* WeatherModel.swift */; };
+		02BD25852A3F278100DCCC06 /* WeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25842A3F278100DCCC06 /* WeatherEndpoint.swift */; };
 		02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */; };
 		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472712A3E184200043ACF /* HeaderTableView.swift */; };
@@ -47,6 +50,9 @@
 		02BD25792A3EFB2000DCCC06 /* HTTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTTPClient.swift; sourceTree = "<group>"; };
 		02BD257B2A3EFB3200DCCC06 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		02BD25802A3F26ED00DCCC06 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		02BD25822A3F274800DCCC06 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		02BD25842A3F278100DCCC06 /* WeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoint.swift; sourceTree = "<group>"; };
 		02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewModel.swift; sourceTree = "<group>"; };
 		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		02C472712A3E184200043ACF /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
@@ -138,9 +144,9 @@
 		02BD256E2A3EF40600DCCC06 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				02BD25722A3EF81000DCCC06 /* Services */,
-				02BD25712A3EF80100DCCC06 /* Endpoints */,
 				02BD25702A3EF7F600DCCC06 /* Base */,
+				02BD25712A3EF80100DCCC06 /* Endpoints */,
+				02BD25722A3EF81000DCCC06 /* Services */,
 				02BD256F2A3EF7E900DCCC06 /* Constants */,
 			);
 			path = Network;
@@ -167,6 +173,7 @@
 		02BD25712A3EF80100DCCC06 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				02BD25842A3F278100DCCC06 /* WeatherEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 		02BD25722A3EF81000DCCC06 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				02BD25802A3F26ED00DCCC06 /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */,
+				02BD25822A3F274800DCCC06 /* WeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,14 +410,17 @@
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
 				02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */,
+				02BD25852A3F278100DCCC06 /* WeatherEndpoint.swift in Sources */,
 				02BD25762A3EFAED00DCCC06 /* ApiProtocol.swift in Sources */,
 				02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */,
 				02052C232A3E48DF001F85EE /* R.generated.swift in Sources */,
 				02052C2C2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift in Sources */,
 				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,
+				02BD25812A3F26ED00DCCC06 /* WeatherService.swift in Sources */,
 				02052C212A3E48CC001F85EE /* R.generated.swift in Sources */,
 				02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */,
 				0225B40E2A3E0C2500096A65 /* AppDelegate.swift in Sources */,
+				02BD25832A3F274800DCCC06 /* WeatherModel.swift in Sources */,
 				02C472702A3E108000043ACF /* WheaterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
