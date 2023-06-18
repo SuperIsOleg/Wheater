@@ -21,7 +21,8 @@ final class WheaterViewController: UIViewController {
         super.viewDidLoad()
         self.wheaterView.tableView.delegate = self
         self.wheaterView.tableView.dataSource = self
-        
+        self.wheaterView.tableView.rowHeight = 200
+        self.wheaterView.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.wheaterView.tableView.sectionHeaderHeight = 350.0
     }
     
@@ -98,10 +99,19 @@ extension WheaterViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentWeatherCollectionViewCell.reuseIdentifier,
-                                                           for: indexPath) as? CurrentWeatherCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentWeatherCollectionViewCell.reuseIdentifier,
+                                                            for: indexPath) as? CurrentWeatherCollectionViewCell else { return UICollectionViewCell() }
         return cell
     }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension WheaterViewController: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sizeForItemAt = CGSize(width: 50,
+                                   height: 80)
+        return sizeForItemAt
+    }
     
 }

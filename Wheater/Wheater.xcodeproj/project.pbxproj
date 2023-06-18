@@ -17,6 +17,11 @@
 		0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0225B4112A3E0C2500096A65 /* WheaterViewController.swift */; };
 		0225B4172A3E0C2600096A65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4162A3E0C2600096A65 /* Assets.xcassets */; };
 		0225B41A2A3E0C2600096A65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0225B4182A3E0C2600096A65 /* LaunchScreen.storyboard */; };
+		02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25732A3EF92E00DCCC06 /* NetworkConstants.swift */; };
+		02BD25762A3EFAED00DCCC06 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25752A3EFAED00DCCC06 /* ApiProtocol.swift */; };
+		02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25792A3EFB2000DCCC06 /* HTTTPClient.swift */; };
+		02BD257C2A3EFB3200DCCC06 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD257B2A3EFB3200DCCC06 /* RequestError.swift */; };
+		02BD257F2A3EFFD800DCCC06 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */; };
 		02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */; };
 		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472712A3E184200043ACF /* HeaderTableView.swift */; };
@@ -37,6 +42,11 @@
 		0225B4162A3E0C2600096A65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0225B4192A3E0C2600096A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0225B41B2A3E0C2600096A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02BD25732A3EF92E00DCCC06 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		02BD25752A3EFAED00DCCC06 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
+		02BD25792A3EFB2000DCCC06 /* HTTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTTPClient.swift; sourceTree = "<group>"; };
+		02BD257B2A3EFB3200DCCC06 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewModel.swift; sourceTree = "<group>"; };
 		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		02C472712A3E184200043ACF /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
@@ -125,6 +135,57 @@
 			path = Wheater;
 			sourceTree = "<group>";
 		};
+		02BD256E2A3EF40600DCCC06 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				02BD25722A3EF81000DCCC06 /* Services */,
+				02BD25712A3EF80100DCCC06 /* Endpoints */,
+				02BD25702A3EF7F600DCCC06 /* Base */,
+				02BD256F2A3EF7E900DCCC06 /* Constants */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		02BD256F2A3EF7E900DCCC06 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				02BD25732A3EF92E00DCCC06 /* NetworkConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		02BD25702A3EF7F600DCCC06 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				02BD25752A3EFAED00DCCC06 /* ApiProtocol.swift */,
+				02BD25792A3EFB2000DCCC06 /* HTTTPClient.swift */,
+				02BD257B2A3EFB3200DCCC06 /* RequestError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		02BD25712A3EF80100DCCC06 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		02BD25722A3EF81000DCCC06 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		02BD257D2A3EFFC400DCCC06 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				02BD257E2A3EFFD800DCCC06 /* ErrorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		02C472672A3E0DA800043ACF /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +198,8 @@
 		02C472682A3E0DB800043ACF /* BusinessLayer */ = {
 			isa = PBXGroup;
 			children = (
+				02BD256E2A3EF40600DCCC06 /* Network */,
+				02BD257D2A3EFFC400DCCC06 /* Models */,
 			);
 			path = BusinessLayer;
 			sourceTree = "<group>";
@@ -333,8 +396,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BD257F2A3EFFD800DCCC06 /* ErrorModel.swift in Sources */,
+				02BD257C2A3EFB3200DCCC06 /* RequestError.swift in Sources */,
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
+				02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */,
+				02BD25762A3EFAED00DCCC06 /* ApiProtocol.swift in Sources */,
+				02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */,
 				02052C232A3E48DF001F85EE /* R.generated.swift in Sources */,
 				02052C2C2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift in Sources */,
 				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,

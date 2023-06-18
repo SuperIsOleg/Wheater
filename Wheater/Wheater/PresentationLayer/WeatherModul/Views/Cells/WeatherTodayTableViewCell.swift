@@ -21,7 +21,8 @@ final class WeatherTodayTableViewCell: UITableViewCell {
     
     private let informationLabel: UILabel = {
         let label = UILabel()
-        label.text = "dsbvjknbdfhjbvdklsnvjkcndsacklfnjknkldsndssfdsfds"
+        label.text = "jhcjz jdhcjkdshj djkhcjd cjd kdcksjks cjd dcsbcbschdb cskdjkcjsk"
+        label.lineBreakMode = .byWordWrapping
         label.font = R.font.helveticaNeueThin(size: 20)
         label.numberOfLines = 0
         label.textAlignment = .left
@@ -58,7 +59,6 @@ final class WeatherTodayTableViewCell: UITableViewCell {
     }
     
     private func setupLayout() {
-        self.contentView.backgroundColor = .clear
         self.backgroundColor = .clear
         self.selectionStyle = .none
         
@@ -80,7 +80,6 @@ final class WeatherTodayTableViewCell: UITableViewCell {
             $0.top.equalTo(informationLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-10)
-            $0.height.equalTo(110)
         })
     }
 }

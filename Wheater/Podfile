@@ -8,5 +8,6 @@ target 'Wheater' do
   # Pods for Wheater
   pod 'R.swift', '~> 7.0.0'
   pod 'SnapKit', '~> 5.6.0'
+  pod 'Alamofire', '~> 5.7.0'
 
 end
