@@ -25,6 +25,8 @@
 		02BD25812A3F26ED00DCCC06 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25802A3F26ED00DCCC06 /* WeatherService.swift */; };
 		02BD25832A3F274800DCCC06 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25822A3F274800DCCC06 /* WeatherModel.swift */; };
 		02BD25852A3F278100DCCC06 /* WeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25842A3F278100DCCC06 /* WeatherEndpoint.swift */; };
+		02BD25882A3F83FD00DCCC06 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25872A3F83FD00DCCC06 /* UIViewController+Extensions.swift */; };
+		02BD258A2A3F8AD400DCCC06 /* SnakeCaseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BD25892A3F8AD400DCCC06 /* SnakeCaseDecoder.swift */; };
 		02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */; };
 		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472712A3E184200043ACF /* HeaderTableView.swift */; };
@@ -53,6 +55,8 @@
 		02BD25802A3F26ED00DCCC06 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		02BD25822A3F274800DCCC06 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		02BD25842A3F278100DCCC06 /* WeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoint.swift; sourceTree = "<group>"; };
+		02BD25872A3F83FD00DCCC06 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		02BD25892A3F8AD400DCCC06 /* SnakeCaseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeCaseDecoder.swift; sourceTree = "<group>"; };
 		02C4726D2A3E0FA700043ACF /* WheaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterViewModel.swift; sourceTree = "<group>"; };
 		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		02C472712A3E184200043ACF /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				02BD25712A3EF80100DCCC06 /* Endpoints */,
 				02BD25722A3EF81000DCCC06 /* Services */,
 				02BD256F2A3EF7E900DCCC06 /* Constants */,
+				02BD25892A3F8AD400DCCC06 /* SnakeCaseDecoder.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -195,9 +200,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		02BD25862A3F83D700DCCC06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				02BD25872A3F83FD00DCCC06 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		02C472672A3E0DA800043ACF /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				02BD25862A3F83D700DCCC06 /* Extensions */,
 				02052C182A3E43C6001F85EE /* Application */,
 				02052C172A3E43C0001F85EE /* Resources */,
 			);
@@ -409,7 +423,9 @@
 				02BD257C2A3EFB3200DCCC06 /* RequestError.swift in Sources */,
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
+				02BD25882A3F83FD00DCCC06 /* UIViewController+Extensions.swift in Sources */,
 				02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */,
+				02BD258A2A3F8AD400DCCC06 /* SnakeCaseDecoder.swift in Sources */,
 				02BD25852A3F278100DCCC06 /* WeatherEndpoint.swift in Sources */,
 				02BD25762A3EFAED00DCCC06 /* ApiProtocol.swift in Sources */,
 				02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */,

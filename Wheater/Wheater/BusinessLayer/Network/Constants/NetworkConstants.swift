@@ -9,5 +9,5 @@ import Foundation
 
 struct NetworkConstants {
     static let baseUrl = "https://api.openweathermap.org"
-    static let apiKey = "3e41f658f6f2540c05098a06b203529e"
+    static let apiKey = "17b3227a6d8c74d6e7e74a95abb7cf70"
 }

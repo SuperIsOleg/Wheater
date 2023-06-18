@@ -8,12 +8,12 @@
 import Foundation
 
 protocol WeatherServiceProtocol {
-    func getCurrentWeather(completion: @escaping (Result<[WeatherModel], RequestError>) -> Void)
+    func getCurrentWeather(completion: @escaping (Result<WeatherModel, RequestError>) -> Void)
 }
 
 struct WeatherService: HTTPClient, WeatherServiceProtocol {
-    func getCurrentWeather(completion: @escaping (Result<[WeatherModel], RequestError>) -> Void) {
-        request(requestApi: WeatherEndpoint.getCurrentWeather, model: [WeatherModel].self, completion: completion)
+    func getCurrentWeather(completion: @escaping (Result<WeatherModel, RequestError>) -> Void) {
+        request(decoder: SnakeCaseDecoder(), requestApi: WeatherEndpoint.getCurrentWeather, model: WeatherModel.self, completion: completion)
     }
 
 }

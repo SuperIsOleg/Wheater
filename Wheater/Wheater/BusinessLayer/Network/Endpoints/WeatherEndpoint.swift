@@ -12,10 +12,11 @@ enum WeatherEndpoint {
 }
 
 extension WeatherEndpoint: ApiProtocol {
+    
     var path: String {
         switch self {
         case .getCurrentWeather:
-            return ""
+            return "/data/3.0/onecall"
         }
     }
     
@@ -23,6 +24,19 @@ extension WeatherEndpoint: ApiProtocol {
         switch self {
         case .getCurrentWeather:
             return .get
+        }
+    }
+    
+    var parameters: Alamofire.Parameters {
+        switch self {
+        case .getCurrentWeather:
+            return [
+               "lat" : "53.893009",
+               "lon" : "27.567444",
+               "exclude" : "minutely",
+               "units" : "metric",
+               "appid" : NetworkConstants.apiKey
+            ]
         }
     }
     

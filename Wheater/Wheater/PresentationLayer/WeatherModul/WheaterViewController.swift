@@ -10,7 +10,7 @@ import AVFoundation
 
 final class WheaterViewController: UIViewController {
     private lazy var wheaterView = WheaterView()
-    private let viewModel: WheaterViewModel
+    private let viewModel = WheaterViewModel()
     
     override func loadView() {
         super.loadView()
@@ -19,25 +19,26 @@ final class WheaterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel.delegate = self
         self.wheaterView.tableView.delegate = self
         self.wheaterView.tableView.dataSource = self
         self.wheaterView.tableView.rowHeight = 200
         self.wheaterView.tableView.estimatedRowHeight = UITableView.automaticDimension
         self.wheaterView.tableView.sectionHeaderHeight = 350.0
+        
+        self.viewModel.getWeather(completion: { result in
+            switch result {
+            case .success(_):
+                break
+            case .failure(let error):
+                self.showAlert(error.localizedDescription)
+            }
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.setupBackgroundVideo()
-    }
-    
-    init(viewModel: WheaterViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupBackgroundVideo() {
@@ -112,6 +113,14 @@ extension WheaterViewController: UICollectionViewDelegateFlowLayout {
         let sizeForItemAt = CGSize(width: 50,
                                    height: 80)
         return sizeForItemAt
+    }
+    
+}
+
+// MARK: - WheaterViewModelDelegate
+extension WheaterViewController: WheaterViewModelDelegate {
+    func reloadData() {
+        self.wheaterView.tableView.reloadData()
     }
     
 }

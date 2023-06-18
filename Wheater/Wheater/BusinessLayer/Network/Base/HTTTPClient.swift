@@ -25,7 +25,7 @@ extension HTTPClient {
         completion: @escaping (Result<U, RequestError>) -> Void) {
             AF.request(requestApi.baseURL + requestApi.path,
                    method: requestApi.method,
-                   parameters: requestApi.body,
+                   parameters: requestApi.parameters,
                    headers: requestApi.headers).response { response in
             guard let _response = response.response else {
                 completion(.failure(.noResponse))

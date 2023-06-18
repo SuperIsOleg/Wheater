@@ -23,7 +23,7 @@ enum RequestError: Error, Equatable {
     var localizedDescription: String {
         switch self {
         case .decode:
-            return "Can't decode"
+            return "Can't decode a model"
         case .invalidURL:
             return "Request URL is not valid"
         case .noResponse:

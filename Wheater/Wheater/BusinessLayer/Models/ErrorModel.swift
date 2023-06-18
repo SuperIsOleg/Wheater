@@ -11,7 +11,7 @@ struct ErrorModel: Codable {
     let errorMessage: String?
     
     enum CodingKeys: String, CodingKey {
-        case errorMessage = "ErrorMessage"
+        case errorMessage = "message"
     }
     
     init(from decoder: Decoder) throws {
