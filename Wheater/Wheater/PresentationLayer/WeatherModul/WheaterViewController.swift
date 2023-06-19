@@ -22,11 +22,11 @@ final class WheaterViewController: UIViewController {
         self.viewModel.delegate = self
         self.wheaterView.tableView.delegate = self
         self.wheaterView.tableView.dataSource = self
-        
+        self.wheaterView.setLoadingState(isLoading: true)
         self.viewModel.getWeather(completion: { result in
             switch result {
             case .success(_):
-                break
+                self.wheaterView.setLoadingState(isLoading: false)
             case .failure(let error):
                 self.showAlert(error.localizedDescription)
             }

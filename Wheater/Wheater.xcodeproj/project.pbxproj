@@ -41,6 +41,7 @@
 		02C61AD32A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD22A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift */; };
 		02C61AD52A4044AE003FCEF5 /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD42A4044AE003FCEF5 /* WeatherTableView.swift */; };
 		02C61AD72A404550003FCEF5 /* DalyWeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD62A404550003FCEF5 /* DalyWeatherTableView.swift */; };
+		02C61ADA2A4063B1003FCEF5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD92A4063B1003FCEF5 /* LoadingView.swift */; };
 		0CE0EF29E02F602616E67173 /* Pods_Wheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		02C61AD22A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForTheDayTableViewCell.swift; sourceTree = "<group>"; };
 		02C61AD42A4044AE003FCEF5 /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		02C61AD62A404550003FCEF5 /* DalyWeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalyWeatherTableView.swift; sourceTree = "<group>"; };
+		02C61AD92A4063B1003FCEF5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3E0D1A96FEF9B40C8435E02D /* Pods-Wheater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.release.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.release.xcconfig"; sourceTree = "<group>"; };
 		4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wheater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801C6964EEF2D312A57B566C /* Pods-Wheater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.debug.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				02C4726A2A3E0F6F00043ACF /* WeatherModul */,
+				02C61AD82A40639F003FCEF5 /* Other */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -300,6 +303,14 @@
 				02052C2B2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		02C61AD82A40639F003FCEF5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				02C61AD92A4063B1003FCEF5 /* LoadingView.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		6157DF7760A9F6F8EC89A300 /* Pods */ = {
@@ -480,6 +491,7 @@
 				02BD258C2A3FA05C00DCCC06 /* Array+Extensions.swift in Sources */,
 				02052C2C2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift in Sources */,
 				02C4726E2A3E0FA700043ACF /* WheaterViewModel.swift in Sources */,
+				02C61ADA2A4063B1003FCEF5 /* LoadingView.swift in Sources */,
 				02BD25812A3F26ED00DCCC06 /* WeatherService.swift in Sources */,
 				02052C212A3E48CC001F85EE /* R.generated.swift in Sources */,
 				02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */,
