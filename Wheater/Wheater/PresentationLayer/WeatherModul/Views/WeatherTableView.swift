@@ -18,6 +18,7 @@ final class WeatherTableView: UITableView {
        self.backgroundColor = .clear
        self.separatorStyle = .none
        self.sectionHeaderHeight = 350.0
+        self.showsVerticalScrollIndicator = false
     }
     
     required init?(coder: NSCoder) {

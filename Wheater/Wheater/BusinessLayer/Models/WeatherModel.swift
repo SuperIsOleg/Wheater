@@ -10,8 +10,8 @@ import Foundation
 struct WeatherModel: Codable {
     let timezone: String
     let current: CurrentWeather
-    let hourly: [Hourly]
-    let daily: [Daily]
+    var hourly: [Hourly]
+    var daily: [Daily]
     
     var currentTime: String = ""
 
@@ -95,6 +95,7 @@ struct Hourly: Codable {
     let weather: [Weather]
     
     var hourlyWeather: String = ""
+    var imageData: Data? = nil
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -130,6 +131,7 @@ struct Daily: Codable {
     var weatherByDate: String = ""
     var sunriseTime: String = ""
     var sunsetTime: String = ""
+    var imageData: Data? = nil
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
