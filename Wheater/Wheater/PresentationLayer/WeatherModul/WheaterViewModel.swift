@@ -10,6 +10,7 @@ import OSLog
 
 protocol WheaterViewModelProtocol {
     func getWeather(completion: @escaping (Result<WeatherModel, RequestError>) -> Void)
+    func getIcon(codeIcon: String, completion: @escaping (Result<Data, RequestError>) -> Void)
 }
 
 protocol WheaterViewModelDelegate: AnyObject {
@@ -17,8 +18,8 @@ protocol WheaterViewModelDelegate: AnyObject {
 }
 
 final class WheaterViewModel: WheaterViewModelProtocol {
-    
     private let weatherService = WeatherService()
+    private let weatherIconService = WeatherIconService()
     internal var weatherModel: WeatherModel? {
         didSet {
             DispatchQueue.main.async {
@@ -39,5 +40,12 @@ final class WheaterViewModel: WheaterViewModelProtocol {
             completion(result)
         })
     }
+    
+    internal func getIcon(codeIcon: String, completion: @escaping (Result<Data, RequestError>) -> Void) {
+        self.weatherIconService.getIcon(codeIcon: codeIcon, completion: { result in
+            completion(result)
+        })
+    }
+    
     
 }

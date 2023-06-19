@@ -35,6 +35,8 @@
 		02C472702A3E108000043ACF /* WheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C4726F2A3E108000043ACF /* WheaterView.swift */; };
 		02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472712A3E184200043ACF /* HeaderTableView.swift */; };
 		02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */; };
+		02C61ACD2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61ACC2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift */; };
+		02C61ACF2A3FD5EC003FCEF5 /* WeatherIconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61ACE2A3FD5EC003FCEF5 /* WeatherIconService.swift */; };
 		0CE0EF29E02F602616E67173 /* Pods_Wheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		02C4726F2A3E108000043ACF /* WheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheaterView.swift; sourceTree = "<group>"; };
 		02C472712A3E184200043ACF /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayTableViewCell.swift; sourceTree = "<group>"; };
+		02C61ACC2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconEnpoint.swift; sourceTree = "<group>"; };
+		02C61ACE2A3FD5EC003FCEF5 /* WeatherIconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconService.swift; sourceTree = "<group>"; };
 		3E0D1A96FEF9B40C8435E02D /* Pods-Wheater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.release.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.release.xcconfig"; sourceTree = "<group>"; };
 		4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wheater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801C6964EEF2D312A57B566C /* Pods-Wheater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.debug.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				02BD25842A3F278100DCCC06 /* WeatherEndpoint.swift */,
+				02C61ACC2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				02BD25802A3F26ED00DCCC06 /* WeatherService.swift */,
+				02C61ACE2A3FD5EC003FCEF5 /* WeatherIconService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -440,10 +446,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				02BD257F2A3EFFD800DCCC06 /* ErrorModel.swift in Sources */,
+				02C61ACD2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift in Sources */,
 				02BD257C2A3EFB3200DCCC06 /* RequestError.swift in Sources */,
 				02BD258E2A3FA43300DCCC06 /* Date+Extensions.swift in Sources */,
 				0225B4122A3E0C2500096A65 /* WheaterViewController.swift in Sources */,
 				02C472722A3E184200043ACF /* HeaderTableView.swift in Sources */,
+				02C61ACF2A3FD5EC003FCEF5 /* WeatherIconService.swift in Sources */,
 				02BD25932A3FB7DC00DCCC06 /* TimeComponets.swift in Sources */,
 				02BD25882A3F83FD00DCCC06 /* UIViewController+Extensions.swift in Sources */,
 				02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */,

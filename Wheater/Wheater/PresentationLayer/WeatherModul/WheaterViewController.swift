@@ -118,6 +118,14 @@ extension WheaterViewController: UICollectionViewDataSource {
               let horlyModel = weatherModel.hourly[safe: indexPath.row],
               let weather = horlyModel.weather.first else { return UICollectionViewCell() }
         cell.configure(model: horlyModel)
+        self.viewModel.getIcon(codeIcon: weather.icon, completion: { result in
+            switch result {
+            case .success(let data):
+                cell.setImage(data: data)
+            case .failure(let error):
+                self.showAlert(error.localizedDescription)
+            }
+        })
 
         return cell
     }

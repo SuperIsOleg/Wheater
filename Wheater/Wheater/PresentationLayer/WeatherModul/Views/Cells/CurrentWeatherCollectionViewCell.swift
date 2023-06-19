@@ -79,7 +79,10 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
         let curentHoure = Date.getCurrentDate(format: "HH")
         let timeWeather = model.hourlyWeather.convertDate(from: "dd-MM-yyyy'T'HH:mm:ss", to: "HH")
         self.timeLabel.text = timeWeather == curentHoure ? R.string.localizable.weatherNow() : timeWeather
-        self.degreesLabel.text = String(format: "%g", model.temp.rounded(.up)) + "°"
-        
+        self.degreesLabel.text = String(format: "%g", model.temp.rounded(.down)) + "°"
+    }
+    
+    internal func setImage(data: Data) {
+        self.weatherImageView.image = UIImage(data: data)
     }
 }
