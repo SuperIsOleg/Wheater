@@ -23,9 +23,8 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let weatherImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = R.image.сloud()
+    private let weatherImageView: LoadableImageView = {
+        let imageView = LoadableImageView(image: nil)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -83,5 +82,9 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
     
     internal func setImage(data: Data) {
         self.weatherImageView.image = UIImage(data: data)
+    }
+    
+    internal func setLoadingState(isLoading: Bool) {
+        self.weatherImageView.setLoadingState(isLoading: isLoading)
     }
 }

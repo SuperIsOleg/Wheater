@@ -119,6 +119,7 @@ extension WheaterViewController: UITableViewDataSource {
                   let dayModel = weatherModel.daily[safe: indexPath.row],
                   let weatherDay = dayModel.weather.first else { return UITableViewCell() }
             cell.configure(model: dayModel)
+            cell.setLoadingState(isLoading: true)
             if let data = dayModel.imageData {
                 cell.setImage(data: data)
             } else {
@@ -129,6 +130,7 @@ extension WheaterViewController: UITableViewDataSource {
                     case .failure(let error):
                         self.showAlert(error.localizedDescription)
                     }
+                    cell.setLoadingState(isLoading: false)
                 })
             }
             return cell
@@ -186,6 +188,7 @@ extension WheaterViewController: UICollectionViewDataSource {
         if let data = horlyModel.imageData {
             cell.setImage(data: data)
         } else {
+            cell.setLoadingState(isLoading: true)
             self.viewModel.getIcon(codeIcon: weather.icon, completion: { result in
                 switch result {
                 case .success(let data):
@@ -194,6 +197,7 @@ extension WheaterViewController: UICollectionViewDataSource {
                 case .failure(let error):
                     self.showAlert(error.localizedDescription)
                 }
+                cell.setLoadingState(isLoading: false)
             })
         }
         

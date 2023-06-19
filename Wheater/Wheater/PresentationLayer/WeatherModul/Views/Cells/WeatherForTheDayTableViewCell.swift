@@ -14,7 +14,7 @@ final class WeatherForTheDayTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.backgroundColor = .none
-        stackView.distribution = .equalCentering
+        stackView.distribution = .equalSpacing
         stackView.alignment = .center
         return stackView
     }()
@@ -28,9 +28,8 @@ final class WeatherForTheDayTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let weatherImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = R.image.сloud()
+    private let weatherImageView: LoadableImageView = {
+        let imageView = LoadableImageView(image: nil)
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -131,6 +130,11 @@ final class WeatherForTheDayTableViewCell: UITableViewCell {
     
     internal func setImage(data: Data) {
         self.weatherImageView.image = UIImage(data: data)
+    }
+    
+    
+    internal func setLoadingState(isLoading: Bool) {
+        self.weatherImageView.setLoadingState(isLoading: isLoading)
     }
 }
 
