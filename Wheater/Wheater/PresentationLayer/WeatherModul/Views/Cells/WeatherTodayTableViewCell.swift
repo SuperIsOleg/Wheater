@@ -59,6 +59,7 @@ final class WeatherTodayTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         self.backgroundColor = .clear
+        self.contentView.backgroundColor = .clear
         self.selectionStyle = .none
         
         self.contentView.addSubview(containerView)

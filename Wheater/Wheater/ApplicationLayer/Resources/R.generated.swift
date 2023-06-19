@@ -64,9 +64,16 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
+
+      /// en translation: %d-Day Forecast
+      ///
+      /// Key: weather.dayForecast
+      ///
+      /// Locales: en
+      var weatherDayForecast: RswiftResources.StringResource1<Int> { .init(key: "weather.dayForecast", tableName: "Localizable", source: source, developmentValue: "%d-Day Forecast", comment: nil) }
 
       /// en translation: Feels like %d°
       ///
@@ -75,12 +82,68 @@ struct _R {
       /// Locales: en
       var weatherFeels: RswiftResources.StringResource1<Int> { .init(key: "weather.feels", tableName: "Localizable", source: source, developmentValue: "Feels like %d°", comment: nil) }
 
+      /// en translation: Friday
+      ///
+      /// Key: weather.friday
+      ///
+      /// Locales: en
+      var weatherFriday: RswiftResources.StringResource { .init(key: "weather.friday", tableName: "Localizable", source: source, developmentValue: "Friday", comment: nil) }
+
+      /// en translation: Monday
+      ///
+      /// Key: weather.monday
+      ///
+      /// Locales: en
+      var weatherMonday: RswiftResources.StringResource { .init(key: "weather.monday", tableName: "Localizable", source: source, developmentValue: "Monday", comment: nil) }
+
       /// en translation: Now
       ///
       /// Key: weather.now
       ///
       /// Locales: en
       var weatherNow: RswiftResources.StringResource { .init(key: "weather.now", tableName: "Localizable", source: source, developmentValue: "Now", comment: nil) }
+
+      /// en translation: Saturday
+      ///
+      /// Key: weather.saturday
+      ///
+      /// Locales: en
+      var weatherSaturday: RswiftResources.StringResource { .init(key: "weather.saturday", tableName: "Localizable", source: source, developmentValue: "Saturday", comment: nil) }
+
+      /// en translation: Sunday
+      ///
+      /// Key: weather.sunday
+      ///
+      /// Locales: en
+      var weatherSunday: RswiftResources.StringResource { .init(key: "weather.sunday", tableName: "Localizable", source: source, developmentValue: "Sunday", comment: nil) }
+
+      /// en translation: Thursday
+      ///
+      /// Key: weather.thursday
+      ///
+      /// Locales: en
+      var weatherThursday: RswiftResources.StringResource { .init(key: "weather.thursday", tableName: "Localizable", source: source, developmentValue: "Thursday", comment: nil) }
+
+      /// en translation: Today
+      ///
+      /// Key: weather.today
+      ///
+      /// Locales: en
+      var weatherToday: RswiftResources.StringResource { .init(key: "weather.today", tableName: "Localizable", source: source, developmentValue: "Today", comment: nil) }
+
+      /// en translation: Tuesday
+      ///
+      /// Key: weather.tuesday
+      ///
+      /// Locales: en
+      var weatherTuesday: RswiftResources.StringResource { .init(key: "weather.tuesday", tableName: "Localizable", source: source, developmentValue: "Tuesday", comment: nil) }
+
+      /// en translation: Wednesday
+      ///
+      /// Key: weather.wednesday
+      ///
+      /// Locales: en
+      var weatherWednesday: RswiftResources.StringResource { .init(key: "weather.wednesday", tableName: "Localizable", source: source, developmentValue: "Wednesday", comment: nil) }
     }
   }
 

@@ -9,3 +9,12 @@
 // MARK: Weather
 weather.feels = "Feels like %d°";
 weather.now = "Now";
+weather.dayForecast = "%d-Day Forecast";
+weather.today = "Today";
+weather.monday = "Monday";
+weather.tuesday = "Tuesday";
+weather.wednesday = "Wednesday";
+weather.thursday = "Thursday";
+weather.friday = "Friday";
+weather.saturday = "Saturday";
+weather.sunday = "Sunday";

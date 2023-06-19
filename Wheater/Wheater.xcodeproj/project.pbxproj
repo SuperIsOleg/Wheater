@@ -37,6 +37,10 @@
 		02C472752A3E19AD00043ACF /* WeatherTodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */; };
 		02C61ACD2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61ACC2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift */; };
 		02C61ACF2A3FD5EC003FCEF5 /* WeatherIconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61ACE2A3FD5EC003FCEF5 /* WeatherIconService.swift */; };
+		02C61AD12A403D03003FCEF5 /* WeatherForTheWeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD02A403D03003FCEF5 /* WeatherForTheWeekTableViewCell.swift */; };
+		02C61AD32A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD22A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift */; };
+		02C61AD52A4044AE003FCEF5 /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD42A4044AE003FCEF5 /* WeatherTableView.swift */; };
+		02C61AD72A404550003FCEF5 /* DalyWeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C61AD62A404550003FCEF5 /* DalyWeatherTableView.swift */; };
 		0CE0EF29E02F602616E67173 /* Pods_Wheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,10 @@
 		02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTodayTableViewCell.swift; sourceTree = "<group>"; };
 		02C61ACC2A3FD4D1003FCEF5 /* WeatherIconEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconEnpoint.swift; sourceTree = "<group>"; };
 		02C61ACE2A3FD5EC003FCEF5 /* WeatherIconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconService.swift; sourceTree = "<group>"; };
+		02C61AD02A403D03003FCEF5 /* WeatherForTheWeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForTheWeekTableViewCell.swift; sourceTree = "<group>"; };
+		02C61AD22A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForTheDayTableViewCell.swift; sourceTree = "<group>"; };
+		02C61AD42A4044AE003FCEF5 /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
+		02C61AD62A404550003FCEF5 /* DalyWeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DalyWeatherTableView.swift; sourceTree = "<group>"; };
 		3E0D1A96FEF9B40C8435E02D /* Pods-Wheater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.release.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.release.xcconfig"; sourceTree = "<group>"; };
 		4F3595D9755E47159E233FB9 /* Pods_Wheater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wheater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		801C6964EEF2D312A57B566C /* Pods-Wheater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheater.debug.xcconfig"; path = "Target Support Files/Pods-Wheater/Pods-Wheater.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +285,8 @@
 				02C472732A3E18EC00043ACF /* Cells */,
 				02C4726F2A3E108000043ACF /* WheaterView.swift */,
 				02C472712A3E184200043ACF /* HeaderTableView.swift */,
+				02C61AD42A4044AE003FCEF5 /* WeatherTableView.swift */,
+				02C61AD62A404550003FCEF5 /* DalyWeatherTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				02C472742A3E19AD00043ACF /* WeatherTodayTableViewCell.swift */,
+				02C61AD02A403D03003FCEF5 /* WeatherForTheWeekTableViewCell.swift */,
+				02C61AD22A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift */,
 				02052C2B2A3E6A27001F85EE /* CurrentWeatherCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -454,9 +466,13 @@
 				02C61ACF2A3FD5EC003FCEF5 /* WeatherIconService.swift in Sources */,
 				02BD25932A3FB7DC00DCCC06 /* TimeComponets.swift in Sources */,
 				02BD25882A3F83FD00DCCC06 /* UIViewController+Extensions.swift in Sources */,
+				02C61AD32A403EAB003FCEF5 /* WeatherForTheDayTableViewCell.swift in Sources */,
 				02BD25742A3EF92E00DCCC06 /* NetworkConstants.swift in Sources */,
 				02BD258A2A3F8AD400DCCC06 /* SnakeCaseDecoder.swift in Sources */,
+				02C61AD72A404550003FCEF5 /* DalyWeatherTableView.swift in Sources */,
+				02C61AD52A4044AE003FCEF5 /* WeatherTableView.swift in Sources */,
 				02BD25852A3F278100DCCC06 /* WeatherEndpoint.swift in Sources */,
+				02C61AD12A403D03003FCEF5 /* WeatherForTheWeekTableViewCell.swift in Sources */,
 				02BD25762A3EFAED00DCCC06 /* ApiProtocol.swift in Sources */,
 				02BD257A2A3EFB2000DCCC06 /* HTTTPClient.swift in Sources */,
 				02052C232A3E48DF001F85EE /* R.generated.swift in Sources */,

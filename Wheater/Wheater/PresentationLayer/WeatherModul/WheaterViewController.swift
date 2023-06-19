@@ -22,9 +22,6 @@ final class WheaterViewController: UIViewController {
         self.viewModel.delegate = self
         self.wheaterView.tableView.delegate = self
         self.wheaterView.tableView.dataSource = self
-        self.wheaterView.tableView.rowHeight = 200
-        self.wheaterView.tableView.estimatedRowHeight = UITableView.automaticDimension
-        self.wheaterView.tableView.sectionHeaderHeight = 350.0
         
         self.viewModel.getWeather(completion: { result in
             switch result {
@@ -63,10 +60,17 @@ extension WheaterViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = HeaderTableView()
-        guard let weatherModel = self.viewModel.weatherModel else { return header }
-        header.configure(model: weatherModel)
-        return header
+        switch tableView {
+        case is WeatherTableView:
+            let header = HeaderTableView()
+            guard let weatherModel = self.viewModel.weatherModel else { return header }
+            header.configure(model: weatherModel)
+            return header
+        case is DalyWeatherTableView:
+            return nil
+        default:
+            return nil
+        }
     }
     
     
@@ -75,25 +79,81 @@ extension WheaterViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension WheaterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch tableView {
+        case is WeatherTableView:
+            return 2
+        case is DalyWeatherTableView:
+            guard let weatherModel = self.viewModel.weatherModel else { return 0 }
+            return weatherModel.daily.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let weatherModel = self.viewModel.weatherModel else { return UITableViewCell() }
         
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTodayTableViewCell.reuseIdentifier,
-                                                           for: indexPath) as? WeatherTodayTableViewCell,
-                  let weatherModel = self.viewModel.weatherModel else { return UITableViewCell() }
-            cell.weatherTodayCollectionView.delegate = self
-            cell.weatherTodayCollectionView.dataSource = self
-            cell.configure(model: weatherModel)
+        switch tableView {
+        case is WeatherTableView:
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTodayTableViewCell.reuseIdentifier,
+                                                               for: indexPath) as? WeatherTodayTableViewCell else { return UITableViewCell() }
+                cell.weatherTodayCollectionView.delegate = self
+                cell.weatherTodayCollectionView.dataSource = self
+                cell.configure(model: weatherModel)
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherForTheWeekTableViewCell.reuseIdentifier,
+                                                               for: indexPath) as? WeatherForTheWeekTableViewCell else { return UITableViewCell() }
+                cell.configure(model: weatherModel.daily)
+                cell.weatherForTheWeekTableView.delegate = self
+                cell.weatherForTheWeekTableView.dataSource = self
+                return cell
+            default:
+                return UITableViewCell()
+            }
+        case is DalyWeatherTableView:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherForTheDayTableViewCell.reuseIdentifier,
+                                                           for: indexPath) as? WeatherForTheDayTableViewCell,
+                  let dayModel = weatherModel.daily[safe: indexPath.row],
+                  let weatherDay = dayModel.weather.first else { return UITableViewCell() }
+            cell.configure(model: dayModel)
+            self.viewModel.getIcon(codeIcon: weatherDay.icon, completion: { result in
+                switch result {
+                case .success(let data):
+                    cell.setImage(data: data)
+                case .failure(let error):
+                    self.showAlert(error.localizedDescription)
+                }
+            })
             return cell
         default:
-            break
+            return UITableViewCell()
         }
         
-        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch tableView {
+        case is WeatherTableView:
+            switch indexPath.row {
+            case 0:
+                return 200
+            case 1:
+                return 450
+            default:
+                return UITableView.automaticDimension
+            }
+        case is DalyWeatherTableView:
+            return 44
+        default:
+            return UITableView.automaticDimension
+        }
     }
     
 }
@@ -126,7 +186,7 @@ extension WheaterViewController: UICollectionViewDataSource {
                 self.showAlert(error.localizedDescription)
             }
         })
-
+        
         return cell
     }
 }

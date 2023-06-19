@@ -33,7 +33,6 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
     private let degreesLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.helveticaNeueThin(size: 15)
-        label.text = "19°"
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -65,7 +64,7 @@ final class CurrentWeatherCollectionViewCell: UICollectionViewCell {
         weatherImageView.snp.makeConstraints({
             $0.top.equalTo(timeLabel.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(25)
+            $0.width.height.equalTo(30)
         })
         
         self.containerView.addSubview(degreesLabel)
